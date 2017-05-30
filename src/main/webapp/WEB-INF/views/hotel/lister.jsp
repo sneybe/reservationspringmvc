@@ -11,6 +11,7 @@
     <body>
         <c:import url="../_MENU.jsp"></c:import>
         <a href='<spring:url value="/hotel/ajouter"/>'>Ajouter</a>
+        
         <contenu>
             <table border="1">
                 <thead>

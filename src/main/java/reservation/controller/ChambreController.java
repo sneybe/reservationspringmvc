@@ -5,13 +5,17 @@
  */
 package reservation.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import reservation.entity.Chambre;
+import reservation.entity.Hotel;
 import reservation.service.ChambreServiceCrud;
+import reservation.service.HotelServiceCrud;
 
 /**
  *
@@ -23,12 +27,14 @@ public class ChambreController {
 
     @Autowired
     private ChambreServiceCrud csc;
-
+    @Autowired
+    private HotelServiceCrud hsc;
     @RequestMapping(value = "/ajouter",method = RequestMethod.GET)
     public String ajouterchambre(Model model) {
         Chambre chambre = new Chambre();
         model.addAttribute("chambres", chambre);
-        return "/chambre/ajouter";
+        model.addAttribute("hotel", hsc.findAll());
+        return "/chambre/ajouter_chambre.jsp";
 
     }
 
