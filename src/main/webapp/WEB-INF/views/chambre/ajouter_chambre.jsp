@@ -5,7 +5,7 @@
 <%@taglib  prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <c:set var="chambreajouter" >
-   <spring url="/chambre/ajouter"/>
+    <spring:url value="/chambre/ajouter"/>
     
 </c:set>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
     </head>
     <body>
         <c:import url="../_MENU.jsp"></c:import>
-        <a href='<spring:url value="/chambre/ajouter"/>'>AJouter Chambre</a>
+        
         <contenu>
             <form:form modelAttribute="chambres" action="${chambreajouter}">
             <label>Nom de la chambre</label>

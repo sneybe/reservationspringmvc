@@ -26,6 +26,6 @@
             <input type="submit"/>
         </form:form>
     </contenu>
-    <c:import url="_PIED.jsp"></c:import>
+    <c:import url="_FOOTER.jsp"></c:import>
 </body>
 </html>

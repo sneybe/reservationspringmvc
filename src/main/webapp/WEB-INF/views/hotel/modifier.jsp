@@ -24,8 +24,7 @@
             <form:hidden path="id"/>
             <label>Nom hotel:</label>
             <form:input path="nom"/>
-            <label>Rue</label>
-            <form:textarea path="adresse.rue"/>
+            <form:input path="prix"/>
             <input type="submit"/>
 
         </form:form>
