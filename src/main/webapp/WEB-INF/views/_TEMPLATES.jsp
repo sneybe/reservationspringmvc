@@ -13,10 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <c:import url="_MENU.jsp"></c:import>
+        <c:import url="../_MENU.jsp"></c:import>
         <contenu>
-            <h1>Bienvenu dans notre site</h1>
+
         </contenu>
-    <c:import url="_FOOTER.jsp"></c:import>  
+    <c:import url="../_FOOTER.jsp"></c:import>  
 </body>
 </html>
