@@ -1,8 +1,3 @@
-<%-- 
-    Document   : _templates
-    Created on : 29 mai 2017, 14:28:18
-    Author     : formation
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

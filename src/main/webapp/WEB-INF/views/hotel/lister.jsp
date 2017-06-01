@@ -1,8 +1,3 @@
-<%-- 
-    Document   : _templates
-    Created on : 29 mai 2017, 14:28:18
-    Author     : formation
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -15,6 +10,8 @@
     </head>
     <body>
         <c:import url="../_MENU.jsp"></c:import>
+        <a href='<spring:url value="/hotel/ajouter"/>'>Ajouter</a>
+        
         <contenu>
             <table border="1">
                 <thead>
@@ -26,6 +23,8 @@
                         <th>PAYS</th>
                         <th>ZIP</th>
                         <th>ACTIONS</th>
+                        <th>ACTIONS</th>
+                       
                     </tr>
 
                 </thead>
@@ -38,8 +37,10 @@
                         <td>${h.adresse.localite}</td>
                         <td>${h.adresse.pays}</td>
                         <td>${h.adresse.zip}</td>
-                        
+
                         <td><a href='<spring:url value="/hotel/supprimer/${h.id}"/>'>Supprimer</a></td>
+                        <td><a href='<spring:url value="/hotel/modifier/${h.id}"/>'>Modifier</a></td>
+                      
                     </tr> 
 
                 </tbody>

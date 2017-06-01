@@ -29,7 +29,7 @@ public class Client implements Serializable {
     private String nom;
     private String prenom;
     @Embedded
-    private Adresse adressec;
+    private Adresse adresse;
     
     @OneToMany(mappedBy = "client")
     private List<Reservation>reservations=new ArrayList();
@@ -58,13 +58,15 @@ public class Client implements Serializable {
         this.prenom = prenom;
     }
 
-    public Adresse getAdressec() {
-        return adressec;
+    public Adresse getAdresse() {
+        return adresse;
     }
 
-    public void setAdressec(Adresse adressec) {
-        this.adressec = adressec;
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
     }
+
+   
 
     public Long getId() {
         return id;
