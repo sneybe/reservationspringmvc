@@ -10,6 +10,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import reservation.entity.Client;
@@ -41,4 +43,32 @@ public class ClientController {
        
        return "/client/ajouter.jsp";
     }
+   
+    @RequestMapping(value = "/ajouter",method = RequestMethod.POST)
+    public String ajouterPost(@ModelAttribute(value = "client")Client client){
+        clsc.save(client);
+        return "redirect:/client/lister";
+    }
+    
+    @RequestMapping(value = "/supprimer/{client}",method = RequestMethod.GET)
+    public String supprimer(@PathVariable(value = "client")Long id){
+        
+        clsc.delete(id);
+        return"redirect:/client/lister";
+        
+    }
+    @RequestMapping(value = "/modifier/{client}",method = RequestMethod.GET)
+    public String modifier(Model model ,@PathVariable(value = "client")long id){
+        Client client = clsc.findOne(id);
+        model.addAttribute("monclient", client);
+        
+        return "/client/modifier.jsp";
+    }
+    @RequestMapping(value = "/modifier",method = RequestMethod.POST)
+    public String modifierPost(@ModelAttribute(value = "monclient")Client client ){
+        clsc.save(client);
+        return"redirect:/client/lister";
+    }
 }
+
+

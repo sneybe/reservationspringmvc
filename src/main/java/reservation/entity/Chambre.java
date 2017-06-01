@@ -7,6 +7,7 @@ package reservation.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -29,7 +32,35 @@ public class Chambre implements Serializable {
     private Long id;
     private String nom;
     private Double prix;
-    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCheckIn;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCheckOut ;
+    private Long nbPersonnes ;
+
+    public Date getDateCheckIn() {
+        return dateCheckIn;
+    }
+
+    public void setDateCheckIn(Date dateCheckIn) {
+        this.dateCheckIn = dateCheckIn;
+    }
+
+    public Date getDateCheckOut() {
+        return dateCheckOut;
+    }
+
+    public void setDateCheckOut(Date dateCheckOut) {
+        this.dateCheckOut = dateCheckOut;
+    }
+
+    public Long getNbPersonnes() {
+        return nbPersonnes;
+    }
+
+    public void setNbPersonnes(Long nbPersonnes) {
+        this.nbPersonnes = nbPersonnes;
+    }
     @ManyToMany(mappedBy = "chambres")
     private List<Reservation>reservations= new ArrayList();
 

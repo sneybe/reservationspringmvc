@@ -6,6 +6,7 @@
     <class>reservation.entity.Chambre</class>
     <class>reservation.entity.Client</class>
     <class>reservation.entity.Reservation</class>
+    <class>reservation.entity.Utilisateur</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>

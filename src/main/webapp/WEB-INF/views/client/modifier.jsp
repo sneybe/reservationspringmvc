@@ -1,13 +1,13 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib  prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib  prefix="spring" uri="http://www.springframework.org/tags" %>
-<c:set var ="chemin">
-    <spring:url value="/client/ajouter"/>
-   
+<c:set var="chemin">
+    
+    <spring:url value="/client/modifier"/>
+    
 </c:set>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +17,7 @@
     <body>
         <c:import url="../_MENU.jsp"></c:import>
         <contenu>
-        <form:form modelAttribute="client" action="${chemin}">
+         <form:form modelAttribute="monclient" action="${chemin}">
             <label>Nom</label>
             <form:input path="nom"/>
             <label>Prenom</label>
@@ -33,7 +33,7 @@
             <label>Pays</label>
             <form:input path="adresse.pays"/>
             <input type="submit"/>
-         </form:form>   
+         </form:form> 
         </contenu>
     <c:import url="../_FOOTER.jsp"></c:import>  
 </body>

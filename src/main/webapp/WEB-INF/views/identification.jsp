@@ -18,9 +18,9 @@
         <c:import url="_MENU.jsp"></c:import>
         <contenu>
             <h1>Identification</h1>
-        <form:form modelAttribute="utilDTO">
+        <form:form modelAttribute="util">
             <label>Identifiant</label>
-            <form:input path="identifiant"/>
+            <form:input path="identifiants"/>
             <label>M-d-p</label>
             <form:input path="motDePasse"/>
             <input type="submit"/>

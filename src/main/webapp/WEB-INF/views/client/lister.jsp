@@ -1,6 +1,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib  prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +10,7 @@
     </head>
     <body>
         <c:import url="../_MENU.jsp"></c:import>
+        <a href='<spring:url value="/client/ajouter"/>'>Ajouter Client</a>
         <contenu>
             <table border='1'>
                 <thead>
@@ -21,6 +23,8 @@
                         <th>LOCALITE</th>
                         <th>ZIP</th>
                         <th>PAYS</th>
+                        <th>ACTIONS</th>
+                        <th>ACTIONS</th>
                     </tr>
 
                 </thead>
@@ -36,7 +40,8 @@
                         <td> ${cl.adresse.zip}</td>
                         <td> ${cl.adresse.pays}</td>
 
-
+                        <td><a href='<spring:url value="/client/supprimer/${cl.id}"/>'>Supprimer</a></td>
+                        <td><a href='<spring:url value="/client/modifier/${cl.id}"/>'>Modifier</a></td>
                     </tr>
                 </c:forEach>
             </tbody>            

@@ -22,7 +22,7 @@ public class Adresse {
     private String localite;
     private Long zip;
     private String pays;
-
+    
     public String getRue() {
         return rue;
     }
